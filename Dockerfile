@@ -9,7 +9,7 @@ COPY build.rs Cargo.toml /build/
 
 RUN cargo build --release
 
-FROM debian:buster-slim
+FROM rust
 
 RUN apt update && apt install -y libssl1.1 ca-certificates && apt clean all
 
