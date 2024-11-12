@@ -9,7 +9,7 @@ COPY build.rs Cargo.toml /build/
 
 RUN cargo build --release
 
-FROM rust as deploy
+FROM rust:slim as deploy
 
 COPY --from=build /build/target/release/dog /dog
 
