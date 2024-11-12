@@ -11,8 +11,6 @@ RUN cargo build --release
 
 FROM rust as deploy
 
-RUN apt update && apt install -y libssl1.1 ca-certificates && apt clean all
-
 COPY --from=build /build/target/release/dog /dog
 
 ENTRYPOINT ["/dog"]
